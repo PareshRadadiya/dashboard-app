@@ -1,0 +1,106 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'" 
+               [opened]="!isMobile"
+               (closed)="closeMobileMenu()" 
+               class="sidebar"
+               [class.mobile]="isMobile"
+               [class.collapsed]="isCollapsed && !isMobile"
+               [fixedInViewport]="true"
+               [fixedTopGap]="0"
+               [autoFocus]="false">
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <div class="brand">
+          <mat-icon>dashboard</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">Dashboard</span>
+        </div>
+        <button *ngIf="!isMobile" 
+                mat-icon-button 
+                (click)="toggleSidebar()" 
+                class="collapse-btn"
+                [class.collapsed]="isCollapsed">
+          <mat-icon>{{ isCollapsed ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+        </button>
+        <button *ngIf="isMobile" 
+                mat-icon-button 
+                (click)="closeMobileMenu()" 
+                class="close-btn">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- User Profile Section -->
+      <div class="user-profile-section">
+        <img src="https://i.pravatar.cc/140?img=32" alt="User Avatar" class="avatar" />
+        <div class="user-info" [class.hidden]="isCollapsed && !isMobile">
+          <span class="name">Paresh Radadiya</span>
+          <span class="email">paresh.radadiya&#64;example.com</span>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="userMenu" [class.hidden]="isCollapsed && !isMobile">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Navigation Items -->
+      <div class="nav-items">
+        <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="isMobile && closeMobileMenu()" [matTooltip]="isCollapsed && !isMobile ? 'Home' : ''" [matTooltipPosition]="'right'">
+          <mat-icon>home</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">Home</span>
+        </a>
+        <a mat-button routerLink="/reports" routerLinkActive="active" (click)="isMobile && closeMobileMenu()" [matTooltip]="isCollapsed && !isMobile ? 'Reports' : ''" [matTooltipPosition]="'right'">
+          <mat-icon>bar_chart</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">Reports</span>
+        </a>
+        <a mat-button routerLink="/settings" routerLinkActive="active" (click)="isMobile && closeMobileMenu()" [matTooltip]="isCollapsed && !isMobile ? 'Settings' : ''" [matTooltipPosition]="'right'">
+          <mat-icon>settings</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">Settings</span>
+        </a>
+      </div>
+
+      <!-- Theme Toggle and Logout -->
+      <div class="sidebar-footer">
+        <button mat-button class="theme-toggle" (click)="toggleTheme()" [matTooltip]="isCollapsed && !isMobile ? ((isDarkMode$ | async) ? 'Light Mode' : 'Dark Mode') : ''" [matTooltipPosition]="'right'">
+          <mat-icon>{{ (isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">{{ (isDarkMode$ | async) ? 'Light Mode' : 'Dark Mode' }}</span>
+        </button>
+        <button mat-button class="logout-button" (click)="logout()" [matTooltip]="isCollapsed && !isMobile ? 'Logout' : ''" [matTooltipPosition]="'right'">
+          <mat-icon>exit_to_app</mat-icon>
+          <span [class.hidden]="isCollapsed && !isMobile">Logout</span>
+        </button>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content [class.content-collapsed]="isCollapsed && !isMobile">
+    <!-- Mobile Toggle Button -->
+    <button *ngIf="isMobile" 
+            mat-icon-button 
+            class="mobile-toggle"
+            (click)="toggleMobileMenu()"
+            [attr.aria-expanded]="isMobileMenuOpen"
+            [attr.aria-label]="isMobileMenuOpen ? 'Close menu' : 'Open menu'">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+
+  <!-- User Menu -->
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>My Profile</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Account Settings</span>
+    </button>
+  </mat-menu>
+</mat-sidenav-container>

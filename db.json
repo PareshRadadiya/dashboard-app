@@ -1,0 +1,878 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "title": "Revenue",
+      "value": "$50,000",
+      "description": "Total revenue this month",
+      "timeFrame": "This Month",
+      "chartType": "line",
+      "icon": "trending_up",
+      "chartData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+        "values": [30, 40, 45, 50, 49, 60, 70, 91],
+        "previous": [25, 35, 40, 45, 44, 55, 65, 85],
+        "target": 75,
+        "colors": ["#1976d2", "#2196f3", "#64b5f6", "#90caf9"]
+      },
+      "trend": "+15%",
+      "comparisonLabel": "vs last month"
+    },
+    {
+      "id": 2,
+      "title": "Orders",
+      "value": "1,250",
+      "description": "Total orders this month",
+      "timeFrame": "This Month",
+      "chartType": "bar",
+      "icon": "shopping_cart",
+      "chartData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+        "values": [65, 59, 80, 81, 56, 55, 40, 80],
+        "previous": [60, 55, 75, 76, 52, 50, 35, 75],
+        "target": 70,
+        "colors": ["#2196f3", "#1976d2", "#64b5f6", "#90caf9"]
+      },
+      "trend": "+8%",
+      "comparisonLabel": "vs last month"
+    },
+    {
+      "id": 3,
+      "title": "Customers",
+      "value": "8,547",
+      "description": "Total customers",
+      "timeFrame": "All Time",
+      "chartType": "line",
+      "icon": "people",
+      "chartData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+        "values": [30, 40, 45, 50, 49, 60, 70, 91],
+        "previous": [25, 35, 40, 45, 44, 55, 65, 85],
+        "target": 80,
+        "colors": ["#64b5f6", "#1976d2", "#2196f3", "#90caf9"]
+      },
+      "trend": "+25%",
+      "comparisonLabel": "vs last month"
+    },
+    {
+      "id": 4,
+      "title": "Growth",
+      "value": "+25%",
+      "description": "Revenue growth this quarter",
+      "timeFrame": "This Quarter",
+      "chartType": "bar",
+      "icon": "insert_chart",
+      "chartData": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+        "values": [45, 55, 75, 85, 95, 90, 85, 95],
+        "previous": [40, 50, 70, 80, 90, 85, 80, 90],
+        "target": 85,
+        "colors": ["#90caf9", "#1976d2", "#2196f3", "#64b5f6"]
+      },
+      "trend": "+10%",
+      "comparisonLabel": "vs last quarter"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2024-03-01T08:00:00",
+      "description": "Online Purchase #5678",
+      "amount": 199.5,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "date": "2024-03-01T12:15:00",
+      "description": "Freelance Payment",
+      "amount": 2000.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 3,
+      "date": "2024-03-02T09:30:00",
+      "description": "Subscription Fee",
+      "amount": 29.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "date": "2024-03-02T14:45:00",
+      "description": "Refund #9012",
+      "amount": 75.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 5,
+      "date": "2024-03-03T10:00:00",
+      "description": "Utility Bill",
+      "amount": 120.75,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 6,
+      "date": "2024-03-03T16:20:00",
+      "description": "Client Invoice #345",
+      "amount": 3500.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 7,
+      "date": "2024-03-04T11:10:00",
+      "description": "Grocery Purchase",
+      "amount": 85.4,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 8,
+      "date": "2024-03-04T13:25:00",
+      "description": "Consulting Fee",
+      "amount": 900.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 9,
+      "date": "2024-03-05T09:50:00",
+      "description": "Software License",
+      "amount": 499.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 10,
+      "date": "2024-03-05T15:30:00",
+      "description": "Return #4567",
+      "amount": 200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 11,
+      "date": "2024-03-06T10:40:00",
+      "description": "Membership Fee",
+      "amount": 60.0,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "date": "2024-03-06T17:00:00",
+      "description": "Project Payment",
+      "amount": 2500.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 13,
+      "date": "2024-03-07T08:15:00",
+      "description": "Travel Expense",
+      "amount": 320.5,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 14,
+      "date": "2024-03-07T14:10:00",
+      "description": "Client Refund",
+      "amount": 150.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 15,
+      "date": "2024-03-08T12:30:00",
+      "description": "Online Course",
+      "amount": 149.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 16,
+      "date": "2024-03-08T16:45:00",
+      "description": "Vendor Payment",
+      "amount": 1800.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 17,
+      "date": "2024-03-09T09:20:00",
+      "description": "Insurance Premium",
+      "amount": 250.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 18,
+      "date": "2024-03-09T13:50:00",
+      "description": "Sales Revenue",
+      "amount": 4200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 19,
+      "date": "2024-03-10T11:00:00",
+      "description": "Equipment Purchase",
+      "amount": 999.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 20,
+      "date": "2024-03-10T15:15:00",
+      "description": "Client Deposit",
+      "amount": 3000.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 21,
+      "date": "2024-03-11T10:25:00",
+      "description": "Marketing Campaign",
+      "amount": 500.0,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 22,
+      "date": "2024-03-11T14:40:00",
+      "description": "Freelance Income",
+      "amount": 1200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 23,
+      "date": "2024-03-12T09:10:00",
+      "description": "Office Supplies",
+      "amount": 75.25,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 24,
+      "date": "2024-03-12T16:00:00",
+      "description": "Consulting Payment",
+      "amount": 1500.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 25,
+      "date": "2024-03-13T08:30:00",
+      "description": "Subscription Renewal",
+      "amount": 99.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 26,
+      "date": "2024-03-13T13:20:00",
+      "description": "Product Sale",
+      "amount": 800.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 27,
+      "date": "2024-03-14T10:15:00",
+      "description": "Travel Booking",
+      "amount": 450.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 28,
+      "date": "2024-03-14T15:30:00",
+      "description": "Client Refund #789",
+      "amount": 200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 29,
+      "date": "2024-03-15T09:45:00",
+      "description": "Software Purchase",
+      "amount": 299.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 30,
+      "date": "2024-03-15T14:50:00",
+      "description": "Service Payment",
+      "amount": 1100.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 31,
+      "date": "2024-03-16T11:20:00",
+      "description": "Utility Payment",
+      "amount": 130.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 32,
+      "date": "2024-03-16T16:10:00",
+      "description": "Sales Invoice",
+      "amount": 2700.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 33,
+      "date": "2024-03-17T09:00:00",
+      "description": "Online Purchase #2345",
+      "amount": 89.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 34,
+      "date": "2024-03-17T13:15:00",
+      "description": "Client Payment",
+      "amount": 1900.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 35,
+      "date": "2024-03-18T10:30:00",
+      "description": "Subscription Fee",
+      "amount": 49.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 36,
+      "date": "2024-03-18T15:45:00",
+      "description": "Refund #1234",
+      "amount": 100.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 37,
+      "date": "2024-03-19T08:20:00",
+      "description": "Service Fee",
+      "amount": 399.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 38,
+      "date": "2024-03-19T14:00:00",
+      "description": "Project Income",
+      "amount": 3200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 39,
+      "date": "2024-03-20T09:10:00",
+      "description": "Grocery Purchase",
+      "amount": 95.5,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 40,
+      "date": "2024-03-20T16:25:00",
+      "description": "Freelance Payment",
+      "amount": 1400.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 41,
+      "date": "2024-03-21T10:00:00",
+      "description": "Software License",
+      "amount": 599.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 42,
+      "date": "2024-03-21T14:30:00",
+      "description": "Client Deposit",
+      "amount": 2500.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 43,
+      "date": "2024-03-22T09:15:00",
+      "description": "Travel Expense",
+      "amount": 280.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 44,
+      "date": "2024-03-22T13:40:00",
+      "description": "Sales Revenue",
+      "amount": 3600.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 45,
+      "date": "2024-03-23T11:50:00",
+      "description": "Office Supplies",
+      "amount": 65.0,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 46,
+      "date": "2024-03-23T15:20:00",
+      "description": "Consulting Fee",
+      "amount": 1700.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 47,
+      "date": "2024-03-24T10:10:00",
+      "description": "Membership Fee",
+      "amount": 80.0,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 48,
+      "date": "2024-03-24T14:45:00",
+      "description": "Client Refund",
+      "amount": 300.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 49,
+      "date": "2024-03-25T09:30:00",
+      "description": "Online Course",
+      "amount": 199.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 50,
+      "date": "2024-03-25T16:00:00",
+      "description": "Vendor Payment",
+      "amount": 2200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 51,
+      "date": "2024-03-26T08:50:00",
+      "description": "Insurance Premium",
+      "amount": 275.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 52,
+      "date": "2024-03-26T13:10:00",
+      "description": "Sales Invoice",
+      "amount": 2900.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 53,
+      "date": "2024-03-27T10:20:00",
+      "description": "Equipment Purchase",
+      "amount": 1200.0,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 54,
+      "date": "2024-03-27T15:30:00",
+      "description": "Client Payment",
+      "amount": 3100.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 55,
+      "date": "2024-03-28T09:00:00",
+      "description": "Marketing Campaign",
+      "amount": 600.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 56,
+      "date": "2024-03-28T14:15:00",
+      "description": "Freelance Income",
+      "amount": 1300.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 57,
+      "date": "2024-03-29T11:25:00",
+      "description": "Grocery Purchase",
+      "amount": 90.75,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 58,
+      "date": "2024-03-29T16:40:00",
+      "description": "Consulting Payment",
+      "amount": 1600.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 59,
+      "date": "2024-03-30T09:10:00",
+      "description": "Subscription Renewal",
+      "amount": 79.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 60,
+      "date": "2024-03-30T13:50:00",
+      "description": "Product Sale",
+      "amount": 900.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 61,
+      "date": "2024-03-31T10:30:00",
+      "description": "Travel Booking",
+      "amount": 350.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 62,
+      "date": "2024-03-31T15:20:00",
+      "description": "Client Refund #890",
+      "amount": 250.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 63,
+      "date": "2024-04-01T09:45:00",
+      "description": "Software Purchase",
+      "amount": 399.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 64,
+      "date": "2024-04-01T14:00:00",
+      "description": "Service Payment",
+      "amount": 2000.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 65,
+      "date": "2024-04-02T08:15:00",
+      "description": "Utility Payment",
+      "amount": 140.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 66,
+      "date": "2024-04-02T13:30:00",
+      "description": "Sales Invoice",
+      "amount": 2800.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 67,
+      "date": "2024-04-03T10:00:00",
+      "description": "Online Purchase #3456",
+      "amount": 99.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 68,
+      "date": "2024-04-03T15:15:00",
+      "description": "Client Payment",
+      "amount": 2100.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 69,
+      "date": "2024-04-04T09:30:00",
+      "description": "Subscription Fee",
+      "amount": 59.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 70,
+      "date": "2024-04-04T14:45:00",
+      "description": "Refund #2345",
+      "amount": 150.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 71,
+      "date": "2024-04-05T08:20:00",
+      "description": "Service Fee",
+      "amount": 499.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 72,
+      "date": "2024-04-05T13:00:00",
+      "description": "Project Income",
+      "amount": 3400.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 73,
+      "date": "2024-04-06T10:10:00",
+      "description": "Grocery Purchase",
+      "amount": 85.5,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 74,
+      "date": "2024-04-06T16:25:00",
+      "description": "Freelance Payment",
+      "amount": 1500.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 75,
+      "date": "2024-04-07T09:00:00",
+      "description": "Software License",
+      "amount": 699.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 76,
+      "date": "2024-04-07T14:30:00",
+      "description": "Client Deposit",
+      "amount": 2600.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 77,
+      "date": "2024-04-08T10:15:00",
+      "description": "Travel Expense",
+      "amount": 300.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 78,
+      "date": "2024-04-08T15:40:00",
+      "description": "Sales Revenue",
+      "amount": 3700.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 79,
+      "date": "2024-04-09T11:50:00",
+      "description": "Office Supplies",
+      "amount": 70.0,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 80,
+      "date": "2024-04-09T16:20:00",
+      "description": "Consulting Fee",
+      "amount": 1800.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 81,
+      "date": "2024-04-10T09:30:00",
+      "description": "Membership Fee",
+      "amount": 90.0,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 82,
+      "date": "2024-04-10T14:45:00",
+      "description": "Client Refund",
+      "amount": 350.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 83,
+      "date": "2024-04-11T10:00:00",
+      "description": "Online Course",
+      "amount": 249.99,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 84,
+      "date": "2024-04-11T15:15:00",
+      "description": "Vendor Payment",
+      "amount": 2300.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 85,
+      "date": "2024-04-12T08:50:00",
+      "description": "Insurance Premium",
+      "amount": 300.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 86,
+      "date": "2024-04-12T13:10:00",
+      "description": "Sales Invoice",
+      "amount": 3000.0,
+      "type": "credit",
+      "status": "pending"
+    },
+    {
+      "id": 87,
+      "date": "2024-04-13T10:20:00",
+      "description": "Equipment Purchase",
+      "amount": 1300.0,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 88,
+      "date": "2024-04-13T15:30:00",
+      "description": "Client Payment",
+      "amount": 3200.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 89,
+      "date": "2024-04-14T09:00:00",
+      "description": "Marketing Campaign",
+      "amount": 700.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 90,
+      "date": "2024-04-14T14:15:00",
+      "description": "Freelance Income",
+      "amount": 1400.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 91,
+      "date": "2024-04-15T11:25:00",
+      "description": "Grocery Purchase",
+      "amount": 95.75,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 92,
+      "date": "2024-04-15T16:40:00",
+      "description": "Consulting Payment",
+      "amount": 1700.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 93,
+      "date": "2024-04-16T09:10:00",
+      "description": "Subscription Renewal",
+      "amount": 89.99,
+      "type": "debit",
+      "status": "pending"
+    },
+    {
+      "id": 94,
+      "date": "2024-04-16T13:50:00",
+      "description": "Product Sale",
+      "amount": 1000.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 95,
+      "date": "2024-04-17T10:30:00",
+      "description": "Travel Booking",
+      "amount": 400.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 96,
+      "date": "2024-04-17T15:20:00",
+      "description": "Client Refund #901",
+      "amount": 300.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 97,
+      "date": "2024-04-18T09:45:00",
+      "description": "Software Purchase",
+      "amount": 499.99,
+      "type": "debit",
+      "status": "failed"
+    },
+    {
+      "id": 98,
+      "date": "2024-04-18T14:00:00",
+      "description": "Service Payment",
+      "amount": 2100.0,
+      "type": "credit",
+      "status": "completed"
+    },
+    {
+      "id": 99,
+      "date": "2024-04-19T08:15:00",
+      "description": "Utility Payment",
+      "amount": 150.0,
+      "type": "debit",
+      "status": "completed"
+    },
+    {
+      "id": 100,
+      "date": "2024-04-19T13:30:00",
+      "description": "Sales Invoice",
+      "amount": 2900.0,
+      "type": "credit",
+      "status": "pending"
+    }
+  ]
+}

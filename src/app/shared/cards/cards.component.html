@@ -1,0 +1,28 @@
+<mat-card class="dashboard-card">
+  <mat-card-content>
+    <div class="header-container">
+      <div class="icon-title-wrapper">
+        <div class="icon-container">
+          <mat-icon>{{ icon }}</mat-icon>
+        </div>
+        <mat-card-subtitle>{{ title }}</mat-card-subtitle>
+      </div>
+      <mat-chip class="time-chip">
+        {{ timeFrame }}
+      </mat-chip>
+    </div>
+    
+    <div class="value-container">
+      <mat-card-title>{{ value }}</mat-card-title>
+      <p class="description">{{ description }}</p>
+    </div>
+
+    <div class="chart-container">
+      <app-chart
+        [type]="chartType"
+        [label]="title"
+        [value]="value">
+      </app-chart>
+    </div>
+  </mat-card-content>
+</mat-card>

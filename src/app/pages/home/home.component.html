@@ -1,0 +1,45 @@
+<div class="min-h-screen ">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="dashboard-container">
+      <ng-container *ngIf="!(loading$ | async); else loadingTpl">
+        <ng-container *ngIf="!(error$ | async); else errorTpl">
+          <!-- Metrics Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
+            <div class="transform transition-all duration-300 hover:scale-[1.02]" *ngFor="let metric of metrics$ | async">
+              <app-card
+                [title]="metric.title"
+                [value]="metric.value"
+                [description]="metric.description"
+                [timeFrame]="metric.timeFrame"
+                [chartType]="metric.chartType">
+              </app-card>
+            </div>
+          </div>
+
+          <!-- Transactions Table -->
+          <div class="mt-6">
+            <ng-container *ngIf="transactions$ | async as transactions">
+              <app-transactions-table [transactions]="transactions">
+              </app-transactions-table>
+            </ng-container>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="flex justify-center items-center min-h-[50vh]">
+    <mat-spinner diameter="48" class="text-primary"></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #errorTpl>
+  <div class="mx-auto max-w-2xl p-4">
+    <div class="bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200 rounded-lg p-4 flex items-center space-x-3">
+      <mat-icon class="flex-shrink-0">error_outline</mat-icon>
+      <span class="text-sm">{{ error$ | async }}</span>
+    </div>
+  </div>
+</ng-template>

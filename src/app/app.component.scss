@@ -1,0 +1,36 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+  padding: 1.5rem;
+  width: calc(100% - 260px);
+  margin-left: 260px;
+}
+
+:host ::ng-deep .sidebar.collapsed:not(.mobile) + .main-content {
+  width: calc(100% - 70px);
+  margin-left: 70px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 72px;
+  }
+}
+
+:host-context(.dark-theme) {
+  .main-content {
+    background-color: #121212;
+  }
+}
