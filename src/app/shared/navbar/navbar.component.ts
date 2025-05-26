@@ -88,6 +88,5 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     // Implement logout logic here
-    console.log('Logout clicked');
   }
 }

@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit {
   }
 
   private loadDashboardData() {
-    console.log('Loading dashboard data...');
     this.loading$.next(true);
     this.error$.next(null);
 
@@ -60,14 +59,11 @@ export class HomeComponent implements OnInit {
           return of({ metrics: [], transactions: [] });
         }),
         finalize(() => {
-          console.log('Loading completed');
           this.loading$.next(false);
         })
       )
       .subscribe({
         next: ({ metrics, transactions }) => {
-          console.log('Loaded metrics:', metrics);
-          console.log('Loaded transactions:', transactions);
           this.metricsSubject.next(metrics);
           this.transactionsSubject.next(transactions);
         },

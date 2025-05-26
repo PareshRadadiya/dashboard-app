@@ -68,15 +68,9 @@ export class DashboardService {
 
   // Cards endpoints
   getCards(): Observable<Card[]> {
-    console.log('Fetching cards from:', `${this.apiUrl}/cards`);
     return this.http.get<Card[]>(`${this.apiUrl}/cards`).pipe(
       map((cards) => {
-        console.log('Raw cards data from API:', JSON.stringify(cards, null, 2));
         return cards.map((card) => {
-          console.log(`Processing card: ${card.title}`, {
-            originalChartData: card.chartData,
-          });
-
           const transformedCard = {
             ...card,
             chartData: {
@@ -93,15 +87,10 @@ export class DashboardService {
             },
           };
 
-          console.log(`Transformed card: ${card.title}`, {
-            transformedChartData: transformedCard.chartData,
-          });
-
           return transformedCard;
         });
       }),
       map((cards) => {
-        console.log('Final transformed cards:', JSON.stringify(cards, null, 2));
         return cards;
       }),
       catchError((error) => {
@@ -137,15 +126,10 @@ export class DashboardService {
       });
     }
 
-    console.log('API Request URL:', `${this.apiUrl}/transactions`, {
-      params: httpParams,
-    }); // Debug log
-
     return this.http
       .get<Transaction[]>(`${this.apiUrl}/transactions`, { params: httpParams })
       .pipe(
         map((response) => {
-          console.log('API Response:', response); // Debug log
           return response;
         }),
         catchError(this.handleError)
