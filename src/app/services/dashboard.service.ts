@@ -152,62 +152,6 @@ export class DashboardService {
       );
   }
 
-  getTransactionById(id: number): Observable<Transaction> {
-    return this.http
-      .get<Transaction>(`${this.apiUrl}/transactions/${id}`)
-      .pipe(catchError(this.handleError));
-  }
-
-  addTransaction(
-    transaction: Omit<Transaction, 'id'>
-  ): Observable<Transaction> {
-    return this.http
-      .post<Transaction>(`${this.apiUrl}/transactions`, transaction)
-      .pipe(catchError(this.handleError));
-  }
-
-  updateTransaction(
-    id: number,
-    transaction: Partial<Transaction>
-  ): Observable<Transaction> {
-    return this.http
-      .patch<Transaction>(`${this.apiUrl}/transactions/${id}`, transaction)
-      .pipe(catchError(this.handleError));
-  }
-
-  deleteTransaction(id: number): Observable<void> {
-    return this.http
-      .delete<void>(`${this.apiUrl}/transactions/${id}`)
-      .pipe(catchError(this.handleError));
-  }
-
-  // Get transaction statistics
-  getTransactionStats(): Observable<any> {
-    return this.http.get<Transaction[]>(`${this.apiUrl}/transactions`).pipe(
-      map((transactions) => this.calculateStats(transactions)),
-      catchError(this.handleError)
-    );
-  }
-
-  // Calculate transaction statistics
-  private calculateStats(transactions: Transaction[]) {
-    const total = transactions.reduce((acc, curr) => {
-      return curr.type === 'credit' ? acc + curr.amount : acc - curr.amount;
-    }, 0);
-
-    const stats = {
-      total,
-      count: transactions.length,
-      credits: transactions.filter((t) => t.type === 'credit').length,
-      debits: transactions.filter((t) => t.type === 'debit').length,
-      completed: transactions.filter((t) => t.status === 'completed').length,
-      pending: transactions.filter((t) => t.status === 'pending').length,
-      failed: transactions.filter((t) => t.status === 'failed').length,
-    };
-
-    return stats;
-  }
-
   // Error handling
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An error occurred';
