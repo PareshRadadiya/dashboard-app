@@ -25,8 +25,15 @@ export function generateChartData(
         label,
         backgroundColor:
           type === 'bar'
-            ? 'rgba(59, 130, 246, 0.5)'
-            : 'rgba(59, 130, 246, 0.1)',
+          ? [
+              'rgba(59, 130, 246, 0.5)',
+              'rgba(16, 185, 129, 0.5)',
+              'rgba(245, 158, 11, 0.5)',
+              'rgba(239, 68, 68, 0.5)',
+              'rgba(99, 102, 241, 0.5)',
+              'rgba(236, 72, 153, 0.5)',
+            ]
+          : 'rgba(59, 130, 246, 0.1)',
         borderColor: 'rgb(59, 130, 246)',
         borderWidth: 2,
         fill: type === 'line',
