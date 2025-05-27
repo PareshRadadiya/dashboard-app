@@ -11,9 +11,6 @@ import { environment } from '../../environments/environment';
 export interface ChartData {
   labels: string[];
   values: number[];
-  current?: number[];
-  previous?: number[];
-  target?: number;
   colors?: string[];
 }
 
@@ -23,7 +20,7 @@ export interface Card {
   value: string;
   description: string;
   timeFrame: string;
-  chartType: 'line' | 'bar' | 'area' | 'donut' | 'sparkline' | 'pie' | 'bubble';
+  chartType: 'line' | 'bar';
   icon: string;
   chartData: ChartData;
   trend?: string;
@@ -65,33 +62,18 @@ export class DashboardService {
   private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
-
   // Cards endpoints
   getCards(): Observable<Card[]> {
     return this.http.get<Card[]>(`${this.apiUrl}/cards`).pipe(
       map((cards) => {
-        return cards.map((card) => {
-          const transformedCard = {
-            ...card,
-            chartData: {
-              labels: card.chartData?.labels || [],
-              values: card.chartData?.values || [],
-              previous: card.chartData?.previous || [],
-              target: card.chartData?.target,
-              colors: card.chartData?.colors || [
-                '#1976d2',
-                '#2196f3',
-                '#64b5f6',
-                '#90caf9',
-              ],
-            },
-          };
-
-          return transformedCard;
-        });
-      }),
-      map((cards) => {
-        return cards;
+        return cards.map((card) => ({
+          ...card,
+          chartData: {
+            labels: card.chartData?.labels || [],
+            values: card.chartData?.values || [],
+            colors: card.chartData?.colors || ['#1976d2', '#2196f3', '#64b5f6', '#90caf9'],
+          },
+        }));
       }),
       catchError((error) => {
         console.error('Error in getCards:', error);

@@ -5,13 +5,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 
-export type CardChartType = 'bar' | 'line' | 'area' | 'donut' | 'sparkline' | 'pie' | 'bubble';
+export type CardChartType = 'bar' | 'line';
 
 export interface ChartData {
   labels: string[];
   values: number[];
-  previous?: number[];
-  target?: number;
   colors?: string[];
 }
 
