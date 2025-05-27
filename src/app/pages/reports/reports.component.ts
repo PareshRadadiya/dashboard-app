@@ -6,29 +6,7 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'app-reports',
   standalone: true,
   imports: [CommonModule, MatCardModule],
-  template: `
-    <div class="reports-container">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Reports</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>Reports and analytics will be displayed here.</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  `,
-  styles: [
-    `
-      .reports-container {
-        padding: 20px;
-      }
-
-      mat-card {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-    `,
-  ],
+  templateUrl: './reports.component.html',
+  styleUrls: ['./reports.component.scss'],
 })
 export class ReportsComponent {}
