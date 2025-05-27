@@ -1,9 +1,5 @@
-<p>chart works!</p>
 <div class="chart-container">
-  <canvas
-    baseChart
-    [data]="chartData"
-    [options]="chartOptions"
-    [type]="getChartType()">
+  <canvas *ngIf="isBrowser" baseChart [type]="getChartType()" [data]="chartData" [options]="chartOptions">
   </canvas>
+  <div *ngIf="!isBrowser" class="ssr-placeholder">Chart loading...</div>
 </div>
