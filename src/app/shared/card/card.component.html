@@ -11,17 +11,20 @@
         {{ timeFrame }}
       </mat-chip>
     </div>
-    
-    <div class="value-container">
+      <div class="value-container">
       <mat-card-title>{{ value }}</mat-card-title>
       <p class="description">{{ description }}</p>
+      <div class="trend-container" *ngIf="trend && comparisonLabel">
+        <span class="trend">{{ trend }}</span>
+        <span class="comparison">{{ comparisonLabel }}</span>
+      </div>
     </div>
 
     <div class="chart-container">
       <app-chart
         [type]="chartType"
         [label]="title"
-        [value]="value">
+        [apiChartData]="chartData">
       </app-chart>
     </div>
   </mat-card-content>

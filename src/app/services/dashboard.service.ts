@@ -18,16 +18,16 @@ export interface ChartData {
 }
 
 export interface Card {
-  id: number;
+  id: string;
   title: string;
   value: string;
   description: string;
   timeFrame: string;
-  chartType: 'line' | 'bar' | 'area' | 'donut' | 'sparkline';
+  chartType: 'line' | 'bar' | 'area' | 'donut' | 'sparkline' | 'pie' | 'bubble';
   icon: string;
   chartData: ChartData;
-  trend: string;
-  comparisonLabel: string;
+  trend?: string;
+  comparisonLabel?: string;
 }
 
 export interface Transaction {

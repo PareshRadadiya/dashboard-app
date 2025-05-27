@@ -5,7 +5,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 
-export type CardChartType = 'bar' | 'line' | 'area' | 'donut' | 'sparkline';
+export type CardChartType = 'bar' | 'line' | 'area' | 'donut' | 'sparkline' | 'pie' | 'bubble';
+
+export interface ChartData {
+  labels: string[];
+  values: number[];
+  previous?: number[];
+  target?: number;
+  colors?: string[];
+}
 
 @Component({
   standalone: true,
@@ -26,5 +34,8 @@ export class CardComponent {
   @Input() description = '';
   @Input() timeFrame = '';
   @Input() chartType: CardChartType = 'bar';
-  @Input() icon = 'analytics'; // Default icon
+  @Input() icon = 'analytics';
+  @Input() chartData: ChartData | null = null;
+  @Input() trend = '';
+  @Input() comparisonLabel = '';
 }

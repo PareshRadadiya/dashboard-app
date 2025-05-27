@@ -1,7 +1,7 @@
 import { ChartData } from 'chart.js';
 
 export function generateChartData(
-  type: 'bar' | 'line' | 'area' | 'donut' | 'sparkline',
+  type: 'bar' | 'line' | 'area' | 'donut' | 'sparkline' | 'pie' | 'bubble',
   label: string
 ): ChartData {
   // Generate last 6 months of data
