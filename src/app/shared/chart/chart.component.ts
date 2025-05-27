@@ -121,8 +121,10 @@ export class ChartComponent implements OnInit, OnChanges {
       // Fallback to generated data
       this.chartData = generateChartData(this.type, this.label);
     }
-  }
-  private createChartDataFromAPI(): ChartData {
+  }  private createChartDataFromAPI(): ChartData {
+    const colors = this.apiChartData!.colors || ['#1976d2', '#2196f3', '#64b5f6', '#90caf9'];
+    const primaryColor = colors[0];
+
     return {
       labels: this.apiChartData!.labels,
       datasets: [
@@ -130,9 +132,11 @@ export class ChartComponent implements OnInit, OnChanges {
           data: this.apiChartData!.values,
           label: this.label,
           backgroundColor: this.type === 'bar'
-            ? this.apiChartData!.colors || ['rgba(59, 130, 246, 0.5)']
-            : 'rgba(59, 130, 246, 0.1)',
-          borderColor: 'rgb(59, 130, 246)',
+            ? colors.map(color => this.hexToRgba(color, 0.6))
+            : this.hexToRgba(primaryColor, 0.1),
+          borderColor: this.type === 'bar'
+            ? colors
+            : primaryColor,
           borderWidth: 2,
           fill: this.type === 'line',
           tension: this.type === 'line' ? 0.4 : 0,
@@ -140,6 +144,15 @@ export class ChartComponent implements OnInit, OnChanges {
         },
       ],
     };
+  }
+
+  private hexToRgba(hex: string, alpha: number): string {
+    // Remove # if present
+    hex = hex.replace('#', '');
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
 
   getChartType(): ChartType {
